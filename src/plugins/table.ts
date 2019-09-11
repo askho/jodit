@@ -880,7 +880,7 @@ export class TableProcessor extends Plugin {
 					// need use event['originalEvent'] because of IE can not set target from
 					// another window to current window
 					const current_cell: HTMLTableCellElement = Dom.closest(
-						(event as any).originalEvent.target as HTMLElement,
+						(event as any)._originalEvent.target as HTMLElement,
 						'TD|TH',
 						this.jodit.editor
 					) as HTMLTableCellElement;

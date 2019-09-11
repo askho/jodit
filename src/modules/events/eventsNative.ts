@@ -77,8 +77,8 @@ export class EventsNative implements IEventsNative {
 			});
 		}
 
-		if (!(event as any).originalEvent) {
-			(event as any).originalEvent = event;
+		if (!(event as any)._originalEvent) {
+			(event as any)._originalEvent = event;
 		}
 
 		if (
@@ -125,7 +125,7 @@ export class EventsNative implements IEventsNative {
 				});
 			});
 
-			Object.defineProperty(evt, 'originalEvent', {
+			Object.defineProperty(evt, '_originalEvent', {
 				value: event,
 				enumerable: true
 			});
